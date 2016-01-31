@@ -1,6 +1,10 @@
 var ffmpeg = require('fluent-ffmpeg');
 var fs = require('fs');
 var router = require('express').Router();
+var log4js = require('log4js');
+
+var logger = log4js.getLogger();
+
 
 function cut_to_pipe(filepath, format, start, duration, output) {
   ffmpeg(filepath)
@@ -19,14 +23,18 @@ router.get ('/', function(req,res) {
   
   var url = req.query.url;
 
-  console.log(url);
-
   if (url == undefined)
     res.status(500);
 
+  logger.info("Requesting file at " + url);
+
   ffmpeg.ffprobe(url, function(err, metadata) {
-    if (err) 
-      res.status(500);
+    if (err) {
+      logger.error("Error while requesting file at " + url);
+      console.log(err);
+      res.status(500).send();
+      return;
+    }
 
     res.writeHead(200, {
       'Content-Type': 'audio/mpeg',
