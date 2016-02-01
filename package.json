@@ -1,0 +1,16 @@
+{
+  "name": "audio-cutter-service",
+  "version": "0.1",
+  "description": "",
+  "author": "Bruno Dias",
+  "dependencies": {
+    "express": "*",
+    "fluent-ffmpeg": "*", 
+    "log4js": "*", 
+    "node-uuid": "*",
+    "abs": "*", 
+    "node-cache": "*", 
+    "shelljs": "*", 
+    "cors": "*"
+  },
+}
