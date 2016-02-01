@@ -1,16 +1,34 @@
 {
   "name": "audio-cutter-service",
-  "version": "1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "An express.js router that offers a service to extract audio segments from a given file.",
   "author": "Bruno Dias",
   "dependencies": {
     "express": "*",
-    "fluent-ffmpeg": "*", 
-    "log4js": "*", 
+    "fluent-ffmpeg": "*",
+    "log4js": "*",
     "node-uuid": "*",
-    "abs": "*", 
-    "node-cache": "*", 
-    "shelljs": "*", 
+    "abs": "*",
+    "node-cache": "*",
+    "shelljs": "*",
     "cors": "*"
-  }
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echo66/audio-cutter-service.git"
+  },
+  "keywords": [
+    "ffmpeg",
+    "audio",
+    "segment"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/echo66/audio-cutter-service/issues"
+  },
+  "homepage": "https://github.com/echo66/audio-cutter-service#readme"
 }
