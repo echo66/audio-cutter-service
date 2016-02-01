@@ -12,5 +12,5 @@
     "node-cache": "*", 
     "shelljs": "*", 
     "cors": "*"
-  },
+  }
 }
