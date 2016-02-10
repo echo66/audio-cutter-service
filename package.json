@@ -11,7 +11,8 @@
     "abs": "*",
     "node-cache": "*",
     "shelljs": "*",
-    "cors": "*"
+    "cors": "*",
+    "tunnel": "*"
   },
   "main": "app.js",
   "scripts": {
