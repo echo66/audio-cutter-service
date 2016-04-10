@@ -67,10 +67,12 @@ module.exports = function(tempDir, fileSizeLimit) {
     ffmpeg(filepath)
         .on('error', function(err) {
               logger.error('Processing error! ' + err);
-              output.writeHead(500);
+              // output.writeHead(500);
         })
-        .format(format)
-        .audioCodec('copy')
+        // .format(format)
+        // .audioCodec('copy')
+        .format('ogg')
+        .audioFrequency(44100)
         .seekInput(parseFloat(start)).duration(parseFloat(duration))
         .pipe(output, { end : true });
   }
@@ -79,7 +81,7 @@ module.exports = function(tempDir, fileSizeLimit) {
     console.log([filepath, url]);
     metadata = audioInfo.get(url);
     res.writeHead(200, {
-      'Content-Type': metadata.format.format_name,
+      'Content-Type': 'ogg',
     });
     cut_to_pipe(filepath, metadata.format.format_name, req.query.start, req.query.duration, res);
   }
